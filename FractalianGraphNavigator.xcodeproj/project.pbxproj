@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E1E249D2A586E52001744F6 /* ModularModel in Frameworks */ = {isa = PBXBuildFile; productRef = 8E1E249C2A586E52001744F6 /* ModularModel */; };
+		8E708F712A5E9D0D00DF5572 /* TestDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E708F702A5E9D0D00DF5572 /* TestDependencies.swift */; };
+		8E708F7A2A5E9E2500DF5572 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 8E708F792A5E9E2500DF5572 /* Swinject */; };
+		8EAEC65E2A5957F800501D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EAEC6582A5957F800501D38 /* Assets.xcassets */; };
+		8EAEC65F2A5957F800501D38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EAEC65B2A5957F800501D38 /* Preview Assets.xcassets */; };
+		8EAEC6602A5957F800501D38 /* AppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEC65C2A5957F800501D38 /* AppTemplateApp.swift */; };
+		8ECBEA142A5863B000771F19 /* FractalianGraphNavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBEA132A5863B000771F19 /* FractalianGraphNavigatorTests.swift */; };
+		8ECBEA1E2A5863B000771F19 /* FractalianGraphNavigatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBEA1D2A5863B000771F19 /* FractalianGraphNavigatorUITests.swift */; };
+		8ECBEA202A5863B000771F19 /* FractalianGraphNavigatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBEA1F2A5863B000771F19 /* FractalianGraphNavigatorUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8ECBEA102A5863B000771F19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8ECBE9F62A5863AF00771F19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8ECBE9FD2A5863AF00771F19;
+			remoteInfo = AppTemplate;
+		};
+		8ECBEA1A2A5863B000771F19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8ECBE9F62A5863AF00771F19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8ECBE9FD2A5863AF00771F19;
+			remoteInfo = AppTemplate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8E708F702A5E9D0D00DF5572 /* TestDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDependencies.swift; sourceTree = "<group>"; };
+		8EAEC6582A5957F800501D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EAEC6592A5957F800501D38 /* FractalianGraphNavigator.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = FractalianGraphNavigator.entitlements; sourceTree = "<group>"; };
+		8EAEC65B2A5957F800501D38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8EAEC65C2A5957F800501D38 /* AppTemplateApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTemplateApp.swift; sourceTree = "<group>"; };
+		8ECBE9FE2A5863AF00771F19 /* FractalianGraphNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalianGraphNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ECBEA0F2A5863B000771F19 /* FractalianGraphNavigatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalianGraphNavigatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ECBEA132A5863B000771F19 /* FractalianGraphNavigatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalianGraphNavigatorTests.swift; sourceTree = "<group>"; };
+		8ECBEA192A5863B000771F19 /* FractalianGraphNavigatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalianGraphNavigatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ECBEA1D2A5863B000771F19 /* FractalianGraphNavigatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalianGraphNavigatorUITests.swift; sourceTree = "<group>"; };
+		8ECBEA1F2A5863B000771F19 /* FractalianGraphNavigatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalianGraphNavigatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8ECBE9FB2A5863AF00771F19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E1E249D2A586E52001744F6 /* ModularModel in Frameworks */,
+				8E708F7A2A5E9E2500DF5572 /* Swinject in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ECBEA0C2A5863B000771F19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ECBEA162A5863B000771F19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E1E249B2A586E52001744F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E708F6F2A5E9CED00DF5572 /* _App */ = {
+			isa = PBXGroup;
+			children = (
+				8E708F702A5E9D0D00DF5572 /* TestDependencies.swift */,
+			);
+			path = _App;
+			sourceTree = "<group>";
+		};
+		8EA595B62A59FCFE00828B80 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8EAEC6582A5957F800501D38 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8EAEC6572A5957F800501D38 /* FractalianGraphNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				8EA595B62A59FCFE00828B80 /* Resources */,
+				8EAEC65A2A5957F800501D38 /* Preview Content */,
+				8EAEC65C2A5957F800501D38 /* AppTemplateApp.swift */,
+				8EAEC6592A5957F800501D38 /* FractalianGraphNavigator.entitlements */,
+			);
+			path = FractalianGraphNavigator;
+			sourceTree = "<group>";
+		};
+		8EAEC65A2A5957F800501D38 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8EAEC65B2A5957F800501D38 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8ECBE9F52A5863AF00771F19 = {
+			isa = PBXGroup;
+			children = (
+				8EAEC6572A5957F800501D38 /* FractalianGraphNavigator */,
+				8ECBEA122A5863B000771F19 /* FractalianGraphNavigatorTests */,
+				8ECBEA1C2A5863B000771F19 /* FractalianGraphNavigatorUITests */,
+				8ECBE9FF2A5863AF00771F19 /* Products */,
+				8E1E249B2A586E52001744F6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8ECBE9FF2A5863AF00771F19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8ECBE9FE2A5863AF00771F19 /* FractalianGraphNavigator.app */,
+				8ECBEA0F2A5863B000771F19 /* FractalianGraphNavigatorTests.xctest */,
+				8ECBEA192A5863B000771F19 /* FractalianGraphNavigatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8ECBEA122A5863B000771F19 /* FractalianGraphNavigatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E708F6F2A5E9CED00DF5572 /* _App */,
+				8ECBEA132A5863B000771F19 /* FractalianGraphNavigatorTests.swift */,
+			);
+			path = FractalianGraphNavigatorTests;
+			sourceTree = "<group>";
+		};
+		8ECBEA1C2A5863B000771F19 /* FractalianGraphNavigatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8ECBEA1D2A5863B000771F19 /* FractalianGraphNavigatorUITests.swift */,
+				8ECBEA1F2A5863B000771F19 /* FractalianGraphNavigatorUITestsLaunchTests.swift */,
+			);
+			path = FractalianGraphNavigatorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8ECBE9FD2A5863AF00771F19 /* FractalianGraphNavigator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ECBEA232A5863B000771F19 /* Build configuration list for PBXNativeTarget "FractalianGraphNavigator" */;
+			buildPhases = (
+				8ECBE9FA2A5863AF00771F19 /* Sources */,
+				8ECBE9FB2A5863AF00771F19 /* Frameworks */,
+				8ECBE9FC2A5863AF00771F19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FractalianGraphNavigator;
+			packageProductDependencies = (
+				8E1E249C2A586E52001744F6 /* ModularModel */,
+				8E708F792A5E9E2500DF5572 /* Swinject */,
+			);
+			productName = AppTemplate;
+			productReference = 8ECBE9FE2A5863AF00771F19 /* FractalianGraphNavigator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8ECBEA0E2A5863B000771F19 /* FractalianGraphNavigatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ECBEA262A5863B000771F19 /* Build configuration list for PBXNativeTarget "FractalianGraphNavigatorTests" */;
+			buildPhases = (
+				8ECBEA0B2A5863B000771F19 /* Sources */,
+				8ECBEA0C2A5863B000771F19 /* Frameworks */,
+				8ECBEA0D2A5863B000771F19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8ECBEA112A5863B000771F19 /* PBXTargetDependency */,
+			);
+			name = FractalianGraphNavigatorTests;
+			productName = AppTemplateTests;
+			productReference = 8ECBEA0F2A5863B000771F19 /* FractalianGraphNavigatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8ECBEA182A5863B000771F19 /* FractalianGraphNavigatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ECBEA292A5863B000771F19 /* Build configuration list for PBXNativeTarget "FractalianGraphNavigatorUITests" */;
+			buildPhases = (
+				8ECBEA152A5863B000771F19 /* Sources */,
+				8ECBEA162A5863B000771F19 /* Frameworks */,
+				8ECBEA172A5863B000771F19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8ECBEA1B2A5863B000771F19 /* PBXTargetDependency */,
+			);
+			name = FractalianGraphNavigatorUITests;
+			productName = AppTemplateUITests;
+			productReference = 8ECBEA192A5863B000771F19 /* FractalianGraphNavigatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8ECBE9F62A5863AF00771F19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+					8ECBE9FD2A5863AF00771F19 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					8ECBEA0E2A5863B000771F19 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 8ECBE9FD2A5863AF00771F19;
+					};
+					8ECBEA182A5863B000771F19 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 8ECBE9FD2A5863AF00771F19;
+					};
+				};
+			};
+			buildConfigurationList = 8ECBE9F92A5863AF00771F19 /* Build configuration list for PBXProject "FractalianGraphNavigator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8ECBE9F52A5863AF00771F19;
+			packageReferences = (
+				8E708F782A5E9E2500DF5572 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
+			productRefGroup = 8ECBE9FF2A5863AF00771F19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8ECBE9FD2A5863AF00771F19 /* FractalianGraphNavigator */,
+				8ECBEA0E2A5863B000771F19 /* FractalianGraphNavigatorTests */,
+				8ECBEA182A5863B000771F19 /* FractalianGraphNavigatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8ECBE9FC2A5863AF00771F19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EAEC65F2A5957F800501D38 /* Preview Assets.xcassets in Resources */,
+				8EAEC65E2A5957F800501D38 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ECBEA0D2A5863B000771F19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ECBEA172A5863B000771F19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8ECBE9FA2A5863AF00771F19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EAEC6602A5957F800501D38 /* AppTemplateApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ECBEA0B2A5863B000771F19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E708F712A5E9D0D00DF5572 /* TestDependencies.swift in Sources */,
+				8ECBEA142A5863B000771F19 /* FractalianGraphNavigatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ECBEA152A5863B000771F19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ECBEA202A5863B000771F19 /* FractalianGraphNavigatorUITestsLaunchTests.swift in Sources */,
+				8ECBEA1E2A5863B000771F19 /* FractalianGraphNavigatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8ECBEA112A5863B000771F19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8ECBE9FD2A5863AF00771F19 /* FractalianGraphNavigator */;
+			targetProxy = 8ECBEA102A5863B000771F19 /* PBXContainerItemProxy */;
+		};
+		8ECBEA1B2A5863B000771F19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8ECBE9FD2A5863AF00771F19 /* FractalianGraphNavigator */;
+			targetProxy = 8ECBEA1A2A5863B000771F19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8ECBEA212A5863B000771F19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8ECBEA222A5863B000771F19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		8ECBEA242A5863B000771F19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FractalianGraphNavigator/FractalianGraphNavigator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"FractalianGraphNavigator/Preview Content\"";
+				DEVELOPMENT_TEAM = 849XMH9N9J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cachefrog.FractalianGraphNavigator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8ECBEA252A5863B000771F19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FractalianGraphNavigator/FractalianGraphNavigator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"FractalianGraphNavigator/Preview Content\"";
+				DEVELOPMENT_TEAM = 849XMH9N9J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cachefrog.FractalianGraphNavigator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8ECBEA272A5863B000771F19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 849XMH9N9J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cachefrog.AppTemplateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FractalianGraphNavigator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FractalianGraphNavigator";
+			};
+			name = Debug;
+		};
+		8ECBEA282A5863B000771F19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 849XMH9N9J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cachefrog.AppTemplateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FractalianGraphNavigator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FractalianGraphNavigator";
+			};
+			name = Release;
+		};
+		8ECBEA2A2A5863B000771F19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 849XMH9N9J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cachefrog.AppTemplateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AppTemplate;
+			};
+			name = Debug;
+		};
+		8ECBEA2B2A5863B000771F19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 849XMH9N9J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cachefrog.AppTemplateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AppTemplate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8ECBE9F92A5863AF00771F19 /* Build configuration list for PBXProject "FractalianGraphNavigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ECBEA212A5863B000771F19 /* Debug */,
+				8ECBEA222A5863B000771F19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ECBEA232A5863B000771F19 /* Build configuration list for PBXNativeTarget "FractalianGraphNavigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ECBEA242A5863B000771F19 /* Debug */,
+				8ECBEA252A5863B000771F19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ECBEA262A5863B000771F19 /* Build configuration list for PBXNativeTarget "FractalianGraphNavigatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ECBEA272A5863B000771F19 /* Debug */,
+				8ECBEA282A5863B000771F19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ECBEA292A5863B000771F19 /* Build configuration list for PBXNativeTarget "FractalianGraphNavigatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ECBEA2A2A5863B000771F19 /* Debug */,
+				8ECBEA2B2A5863B000771F19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E708F782A5E9E2500DF5572 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E1E249C2A586E52001744F6 /* ModularModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ModularModel;
+		};
+		8E708F792A5E9E2500DF5572 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E708F782A5E9E2500DF5572 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8ECBE9F62A5863AF00771F19 /* Project object */;
+}
