@@ -13,4 +13,7 @@
    <FileRef
       location = "container:/Users/kamil/Projects/My/FractalianGraphNavigator/FractalianGraphNavigator.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:FractalianGraphNavigatorTestPlan.xctestplan">
+   </FileRef>
 </Workspace>

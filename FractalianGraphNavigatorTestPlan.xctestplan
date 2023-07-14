@@ -1,0 +1,75 @@
+{
+  "configurations" : [
+    {
+      "id" : "71A28325-F422-48F9-BBED-FB7A302332DB",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-com.apple.CoreData.SQLDebug 1"
+      },
+      {
+        "argument" : "-com.apple.CoreData.ConcurrencyDebug 1"
+      }
+    ],
+    "environmentVariableEntries" : [
+      {
+        "key" : "SQLITE_ENABLE_THREAD_ASSERTIONS",
+        "value" : "1"
+      },
+      {
+        "key" : "SQLITE_ENABLE_FILE_ASSERTIONS",
+        "value" : "1"
+      }
+    ],
+    "language" : "en",
+    "locationScenario" : {
+      "identifier" : "New York, NY, USA",
+      "referenceType" : "built-in"
+    },
+    "region" : "US",
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FractalianGraphNavigator.xcodeproj",
+      "identifier" : "8ECBE9FD2A5863AF00771F19",
+      "name" : "FractalianGraphNavigator"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:FractalianGraphNavigator.xcodeproj",
+        "identifier" : "8ECBEA0E2A5863B000771F19",
+        "name" : "FractalianGraphNavigatorTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:GraphMLParser",
+        "identifier" : "GraphMLParserTests",
+        "name" : "GraphMLParserTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:ModularModel",
+        "identifier" : "ModularModelTests",
+        "name" : "ModularModelTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Services",
+        "identifier" : "GraphServiceTests",
+        "name" : "GraphServiceTests"
+      }
+    }
+  ],
+  "version" : 1
+}
