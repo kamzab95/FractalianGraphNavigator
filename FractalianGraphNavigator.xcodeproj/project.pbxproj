@@ -8,8 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		8E1E249D2A586E52001744F6 /* ModularModel in Frameworks */ = {isa = PBXBuildFile; productRef = 8E1E249C2A586E52001744F6 /* ModularModel */; };
+		8E6D89E82A6163DF0011AD2D /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D89E72A6163DF0011AD2D /* SelectionView.swift */; };
+		8E6D89EB2A61A3260011AD2D /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D89EA2A61A3260011AD2D /* MainCoordinatorView.swift */; };
+		8E6D89ED2A61D74E0011AD2D /* MainCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D89EC2A61D74E0011AD2D /* MainCoordinatorViewModel.swift */; };
+		8E6D89EF2A61D82F0011AD2D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D89EE2A61D82F0011AD2D /* MainCoordinator.swift */; };
+		8E6D89F12A61D8E40011AD2D /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D89F02A61D8E40011AD2D /* SelectionViewModel.swift */; };
+		8E6D89F32A61E1720011AD2D /* NodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D89F22A61E1720011AD2D /* NodeViewModel.swift */; };
+		8E708F6B2A5DF9BD00DF5572 /* GraphService in Frameworks */ = {isa = PBXBuildFile; productRef = 8E708F6A2A5DF9BD00DF5572 /* GraphService */; };
+		8E708F6E2A5E9CC800DF5572 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E708F6D2A5E9CC800DF5572 /* AppDependencies.swift */; };
 		8E708F712A5E9D0D00DF5572 /* TestDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E708F702A5E9D0D00DF5572 /* TestDependencies.swift */; };
+		8E708F772A5E9D9400DF5572 /* Resolver+resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E708F762A5E9D9400DF5572 /* Resolver+resolve.swift */; };
 		8E708F7A2A5E9E2500DF5572 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 8E708F792A5E9E2500DF5572 /* Swinject */; };
+		8E708F7C2A5EB7AC00DF5572 /* fractal_graph.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8E708F7B2A5EB7AC00DF5572 /* fractal_graph.graphml */; };
+		8E8B8C9C2A6009730090D7C9 /* random_graph.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8E8B8C9B2A6009730090D7C9 /* random_graph.graphml */; };
+		8EA595B82A59FD1E00828B80 /* organic2.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8EA595B72A59FD1E00828B80 /* organic2.graphml */; };
+		8EA595BB2A59FD7700828B80 /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA595BA2A59FD7700828B80 /* NodeView.swift */; };
+		8EA595BD2A59FDE300828B80 /* GraphMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8EA595BC2A59FDE300828B80 /* GraphMLParser */; };
+		8EA595D12A5D3B9400828B80 /* NodeRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA595D02A5D3B9400828B80 /* NodeRectangleView.swift */; };
+		8EA595D42A5D4C3200828B80 /* circular1.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8EA595D32A5D4C3200828B80 /* circular1.graphml */; };
+		8EA595D62A5D4C9E00828B80 /* hierarchical1.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8EA595D52A5D4C9E00828B80 /* hierarchical1.graphml */; };
 		8EAEC65E2A5957F800501D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EAEC6582A5957F800501D38 /* Assets.xcassets */; };
 		8EAEC65F2A5957F800501D38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EAEC65B2A5957F800501D38 /* Preview Assets.xcassets */; };
 		8EAEC6602A5957F800501D38 /* AppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEC65C2A5957F800501D38 /* AppTemplateApp.swift */; };
@@ -36,7 +53,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E6D89E72A6163DF0011AD2D /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		8E6D89EA2A61A3260011AD2D /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
+		8E6D89EC2A61D74E0011AD2D /* MainCoordinatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorViewModel.swift; sourceTree = "<group>"; };
+		8E6D89EE2A61D82F0011AD2D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		8E6D89F02A61D8E40011AD2D /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
+		8E6D89F22A61E1720011AD2D /* NodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeViewModel.swift; sourceTree = "<group>"; };
+		8E708F6D2A5E9CC800DF5572 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		8E708F702A5E9D0D00DF5572 /* TestDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDependencies.swift; sourceTree = "<group>"; };
+		8E708F762A5E9D9400DF5572 /* Resolver+resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+resolve.swift"; sourceTree = "<group>"; };
+		8E708F7B2A5EB7AC00DF5572 /* fractal_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = fractal_graph.graphml; path = Scripts/fractal_graph.graphml; sourceTree = SOURCE_ROOT; };
+		8E8B8C9B2A6009730090D7C9 /* random_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = random_graph.graphml; path = Scripts/random_graph.graphml; sourceTree = SOURCE_ROOT; };
+		8EA595B72A59FD1E00828B80 /* organic2.graphml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = organic2.graphml; sourceTree = "<group>"; };
+		8EA595BA2A59FD7700828B80 /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
+		8EA595D02A5D3B9400828B80 /* NodeRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeRectangleView.swift; sourceTree = "<group>"; };
+		8EA595D32A5D4C3200828B80 /* circular1.graphml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = circular1.graphml; sourceTree = "<group>"; };
+		8EA595D52A5D4C9E00828B80 /* hierarchical1.graphml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hierarchical1.graphml; sourceTree = "<group>"; };
 		8EAEC6582A5957F800501D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EAEC6592A5957F800501D38 /* FractalianGraphNavigator.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = FractalianGraphNavigator.entitlements; sourceTree = "<group>"; };
 		8EAEC65B2A5957F800501D38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -55,6 +87,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E1E249D2A586E52001744F6 /* ModularModel in Frameworks */,
+				8EA595BD2A59FDE300828B80 /* GraphMLParser in Frameworks */,
+				8E708F6B2A5DF9BD00DF5572 /* GraphService in Frameworks */,
 				8E708F7A2A5E9E2500DF5572 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +117,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E6D89E62A6163BE0011AD2D /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				8E6D89E72A6163DF0011AD2D /* SelectionView.swift */,
+				8E6D89F02A61D8E40011AD2D /* SelectionViewModel.swift */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
+		8E6D89E92A61A3150011AD2D /* MainCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8E6D89EE2A61D82F0011AD2D /* MainCoordinator.swift */,
+				8E6D89EA2A61A3260011AD2D /* MainCoordinatorView.swift */,
+				8E6D89EC2A61D74E0011AD2D /* MainCoordinatorViewModel.swift */,
+			);
+			path = MainCoordinator;
+			sourceTree = "<group>";
+		};
+		8E708F6C2A5E9C9300DF5572 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8E708F6D2A5E9CC800DF5572 /* AppDependencies.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		8E708F6F2A5E9CED00DF5572 /* _App */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,17 +152,69 @@
 			path = _App;
 			sourceTree = "<group>";
 		};
+		8E708F742A5E9D7100DF5572 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8E708F752A5E9D8400DF5572 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8E708F752A5E9D8400DF5572 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E708F762A5E9D9400DF5572 /* Resolver+resolve.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8EA595B62A59FCFE00828B80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8E8B8C9B2A6009730090D7C9 /* random_graph.graphml */,
+				8E708F7B2A5EB7AC00DF5572 /* fractal_graph.graphml */,
+				8EA595D52A5D4C9E00828B80 /* hierarchical1.graphml */,
+				8EA595D32A5D4C3200828B80 /* circular1.graphml */,
+				8EA595B72A59FD1E00828B80 /* organic2.graphml */,
 				8EAEC6582A5957F800501D38 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		8EA595B92A59FD6C00828B80 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8E6D89E92A61A3150011AD2D /* MainCoordinator */,
+				8E6D89E62A6163BE0011AD2D /* Selection */,
+				8EA595BE2A5AC0DA00828B80 /* Node */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8EA595BE2A5AC0DA00828B80 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				8EA595CF2A5D3B8700828B80 /* Views */,
+				8EA595BA2A59FD7700828B80 /* NodeView.swift */,
+				8E6D89F22A61E1720011AD2D /* NodeViewModel.swift */,
+			);
+			path = Node;
+			sourceTree = "<group>";
+		};
+		8EA595CF2A5D3B8700828B80 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8EA595D02A5D3B9400828B80 /* NodeRectangleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8EAEC6572A5957F800501D38 /* FractalianGraphNavigator */ = {
 			isa = PBXGroup;
 			children = (
+				8E708F742A5E9D7100DF5572 /* Common */,
+				8E708F6C2A5E9C9300DF5572 /* App */,
+				8EA595B92A59FD6C00828B80 /* Modules */,
 				8EA595B62A59FCFE00828B80 /* Resources */,
 				8EAEC65A2A5957F800501D38 /* Preview Content */,
 				8EAEC65C2A5957F800501D38 /* AppTemplateApp.swift */,
@@ -175,6 +288,8 @@
 			name = FractalianGraphNavigator;
 			packageProductDependencies = (
 				8E1E249C2A586E52001744F6 /* ModularModel */,
+				8EA595BC2A59FDE300828B80 /* GraphMLParser */,
+				8E708F6A2A5DF9BD00DF5572 /* GraphService */,
 				8E708F792A5E9E2500DF5572 /* Swinject */,
 			);
 			productName = AppTemplate;
@@ -269,8 +384,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EA595D42A5D4C3200828B80 /* circular1.graphml in Resources */,
 				8EAEC65F2A5957F800501D38 /* Preview Assets.xcassets in Resources */,
+				8EA595B82A59FD1E00828B80 /* organic2.graphml in Resources */,
 				8EAEC65E2A5957F800501D38 /* Assets.xcassets in Resources */,
+				8E708F7C2A5EB7AC00DF5572 /* fractal_graph.graphml in Resources */,
+				8EA595D62A5D4C9E00828B80 /* hierarchical1.graphml in Resources */,
+				8E8B8C9C2A6009730090D7C9 /* random_graph.graphml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +415,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E708F6E2A5E9CC800DF5572 /* AppDependencies.swift in Sources */,
+				8EA595D12A5D3B9400828B80 /* NodeRectangleView.swift in Sources */,
+				8E6D89EB2A61A3260011AD2D /* MainCoordinatorView.swift in Sources */,
+				8E6D89F12A61D8E40011AD2D /* SelectionViewModel.swift in Sources */,
+				8E708F772A5E9D9400DF5572 /* Resolver+resolve.swift in Sources */,
 				8EAEC6602A5957F800501D38 /* AppTemplateApp.swift in Sources */,
+				8EA595BB2A59FD7700828B80 /* NodeView.swift in Sources */,
+				8E6D89ED2A61D74E0011AD2D /* MainCoordinatorViewModel.swift in Sources */,
+				8E6D89EF2A61D82F0011AD2D /* MainCoordinator.swift in Sources */,
+				8E6D89E82A6163DF0011AD2D /* SelectionView.swift in Sources */,
+				8E6D89F32A61E1720011AD2D /* NodeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,10 +803,18 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = ModularModel;
 		};
+		8E708F6A2A5DF9BD00DF5572 /* GraphService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GraphService;
+		};
 		8E708F792A5E9E2500DF5572 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8E708F782A5E9E2500DF5572 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		8EA595BC2A59FDE300828B80 /* GraphMLParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GraphMLParser;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

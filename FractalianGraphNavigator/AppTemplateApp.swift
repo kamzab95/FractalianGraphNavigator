@@ -12,9 +12,11 @@ import GraphService
 
 @main
 struct FractalianGraphNavigatorApp: App {
+    @State var container = LiveContainerFactory.build()
+    
     var body: some Scene {
         WindowGroup {
-            EmptyView()
+            MainCoordinatorView(container: container)
         }
     }
 }
