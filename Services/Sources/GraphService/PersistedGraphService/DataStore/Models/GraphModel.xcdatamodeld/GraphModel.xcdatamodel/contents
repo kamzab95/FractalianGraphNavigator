@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDEdge" representedClassName="CDEdge" syncable="YES" codeGenerationType="class">
+        <attribute name="graph" optional="YES" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="target" optional="YES" attributeType="String"/>
+        <fetchIndex name="bySource">
+            <fetchIndexElement property="source" type="Binary" order="ascending"/>
+            <fetchIndexElement property="graph" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byTarget">
+            <fetchIndexElement property="target" type="Binary" order="ascending"/>
+            <fetchIndexElement property="graph" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="source"/>
+                <constraint value="target"/>
+                <constraint value="graph"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="CDGraph" representedClassName="CDGraph" syncable="YES" codeGenerationType="class">
+        <attribute name="directed" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
+        <fetchIndex name="byId">
+            <fetchIndexElement property="id" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="CDNode" representedClassName="CDNode" syncable="YES" codeGenerationType="class">
+        <attribute name="graph" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <fetchIndex name="byId">
+            <fetchIndexElement property="graph" type="Binary" order="ascending"/>
+            <fetchIndexElement property="id" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+                <constraint value="graph"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>
