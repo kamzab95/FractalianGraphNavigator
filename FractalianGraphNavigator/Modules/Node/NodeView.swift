@@ -50,12 +50,14 @@ struct NodeView: View {
                 .cornerRadius(8)
                 .padding(8)
             
-            ScrollView {
-                Text("\(node.dataDescription)")
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity)
+            if let dataDescription = node.dataDescription {
+                ScrollView {
+                    Text(dataDescription)
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity)
+                }
+                .frame(maxWidth: .infinity, maxHeight: 160)
             }
-            .frame(maxWidth: .infinity, maxHeight: 160)
             
             ScrollView {
                 NodesGridView(nodeTrees: nodeTree.children) { nodeId in
@@ -69,7 +71,11 @@ struct NodeView: View {
 }
 
 extension GraphNode {
-    var dataDescription: String {
+    var dataDescription: String? {
+        guard !elements.isEmpty else {
+            return nil
+        }
+        
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         do {

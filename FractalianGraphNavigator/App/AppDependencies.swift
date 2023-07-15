@@ -20,7 +20,11 @@ class LiveContainerFactory {
         let container = Container()
         
         container.register(GraphService.self) { _ in
-            return CoreDataGraphService(dataStore: CoreDataGraphDataStore())
+            CoreDataGraphService(dataStore: CoreDataGraphDataStore())
+        }.inObjectScope(.container)
+        
+        container.register(GraphFilesProvider.self) { _ in
+            BundleGraphFilesProvider()
         }.inObjectScope(.container)
         
         return container
@@ -35,7 +39,11 @@ class PreviewContainerFactory {
         let container = Container()
         
         container.register(GraphService.self) { _ in
-            return CoreDataGraphService(dataStore: CoreDataGraphDataStore(inMemory: true))
+            CoreDataGraphService(dataStore: CoreDataGraphDataStore(inMemory: true))
+        }.inObjectScope(.container)
+        
+        container.register(GraphFilesProvider.self) { _ in
+            BundleGraphFilesProvider()
         }.inObjectScope(.container)
         
         return container

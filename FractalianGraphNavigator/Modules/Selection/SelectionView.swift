@@ -21,8 +21,9 @@ struct SelectionView: View {
         VStack {
             HStack {
                 Picker("File", selection: viewModel.binding(\.selectedGraphFile, input: { .selectGraphFile($0) })) {
-                    ForEach(viewModel.graphFiles, id: \.self) {
-                        Text($0)
+                    Text("").tag(nil as GraphFile?)
+                    ForEach(viewModel.graphFiles, id: \.url) {
+                        Text($0.name).tag($0 as GraphFile?)
                     }
                 }
                 .pickerStyle(.menu)
@@ -37,7 +38,7 @@ struct SelectionView: View {
             
             HStack {
                 if viewModel.processing {
-                    Text("Processing \(viewModel.selectedGraphFile ?? "")")
+                    Text("Processing \(viewModel.selectedGraphFile?.name ?? "")")
                     ProgressView()
                         .padding()
                 }

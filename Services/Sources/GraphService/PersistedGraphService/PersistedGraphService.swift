@@ -28,6 +28,10 @@ public class CoreDataGraphService: GraphService {
         try await dataStore.getGraphs(limit: nil)
     }
     
+    public func getGraph(id: GraphDef.ID) async throws -> GraphDef {
+        try await dataStore.getGraph(id: id)
+    }
+    
     public func getTopNode(graphId: GraphDef.ID) async throws -> GraphNode {
         guard let node = try await dataStore.getNodes(graphId: graphId, limit: 1).first else {
             throw CoreDataGraphServiceError.noTopNodeFound
@@ -46,32 +50,8 @@ public class CoreDataGraphService: GraphService {
     public func getEdges(target: GraphNode.ID, graphId: GraphDef.ID) async throws -> [GraphEdge] {
         try await dataStore.getEdges(source: target, graphId: graphId)
     }
-    
-    public func getConnectedNodes(nodeId: GraphNode.ID, graphId: GraphDef.ID) async throws -> [GraphNode] {
-        let graph = try await dataStore.getGraph(id: graphId)
-        let directed = graph.directed
-        
-        var nodes = [GraphNode.ID: GraphNode]()
-        
-        var edges = try await dataStore.getEdges(source: nodeId, graphId: graphId)
-        
-        for edge in edges {
-            let node = try await dataStore.getNode(id: edge.target, graphId: graphId)
-            nodes[node.id] = node
-        }
-        
-        if !directed {
-            edges = try await dataStore.getEdges(target: nodeId, graphId: graphId)
-            for edge in edges {
-                let node = try await dataStore.getNode(id: edge.source, graphId: graphId)
-                nodes[node.id] = node
-            }
-        }
-        
-        return Array(nodes.values)
-    }
 }
 
-enum CoreDataGraphServiceError: String, LocalizedError {
+public enum CoreDataGraphServiceError: String, LocalizedError {
     case noTopNodeFound
 }

@@ -16,8 +16,8 @@ struct DatabaseInfo: Identifiable {
 
 struct SelectionViewState {
     var existingDatabases: [DatabaseInfo] = []
-    var graphFiles: [String] = []
-    var selectedGraphFile: String = ""
+    var graphFiles: [GraphFile] = []
+    var selectedGraphFile: GraphFile?
     var processing = false
     var errorMessage: String?
 }
@@ -29,7 +29,7 @@ extension SelectionViewState {
 enum SelectionViewAction {
     case viewDidLoad
     case openDatabase(DatabaseInfo)
-    case selectGraphFile(String)
+    case selectGraphFile(GraphFile?)
     case processGraphFile
     case closeError
 }
@@ -39,11 +39,19 @@ class SelectionViewModel: ViewModel {
     @Published var state: SelectionViewState = .init()
     
     private let graphService: GraphService
+    private let graphFilesProvider: GraphFilesProvider
     private var mainCoordinator: MainCoordinator?
     
-    init(container: Container) {
-        graphService = container.resolve()!
-        mainCoordinator = container.resolve()
+    convenience init(container: Container) {
+        self.init(graphService: container.resolve()!,
+                  graphFilesProvider: container.resolve()!,
+                  mainCoordinator: container.resolve())
+    }
+    
+    init(graphService: GraphService, graphFilesProvider: GraphFilesProvider, mainCoordinator: MainCoordinator?) {
+        self.graphService = graphService
+        self.graphFilesProvider = graphFilesProvider
+        self.mainCoordinator = mainCoordinator
     }
     
     func trigger(_ action: SelectionViewAction) async {
@@ -63,10 +71,8 @@ class SelectionViewModel: ViewModel {
     }
     
     private func loadAvailableFiles() {
-        let urls = Bundle.main.urls(forResourcesWithExtension: "graphml", subdirectory: nil) ?? []
-        let fileNames = urls.map({ $0.deletingPathExtension().lastPathComponent }).sorted()
-        state.graphFiles = fileNames
-        state.selectedGraphFile = fileNames.first ?? ""
+        state.graphFiles = graphFilesProvider.getAllFiles().sorted(by: { $0.name < $1.name })
+        state.selectedGraphFile = state.graphFiles.first
     }
     
     private func loadExistingDatabases() async {
@@ -81,14 +87,13 @@ class SelectionViewModel: ViewModel {
     }
     
     private func processGraphFile() async {
+        guard let graphFile = state.selectedGraphFile else {
+            return
+        }
         state.processing = true
         
-        let fileName = state.selectedGraphFile
-        
-        let url = Bundle.main.url(forResource: fileName, withExtension: "graphml")!
-        
         do {
-            try await graphService.loadGraph(url: url, graphId: fileName)
+            try await graphService.loadGraph(url: graphFile.url, graphId: graphFile.name)
         } catch {
             state.errorMessage = error.localizedDescription
         }

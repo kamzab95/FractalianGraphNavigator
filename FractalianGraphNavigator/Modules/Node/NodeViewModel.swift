@@ -47,9 +47,14 @@ class NodeViewModel: ViewModel {
     
     private let graphService: GraphService
     
-    init(graph: GraphDef.ID, container: Container) {
+    convenience init(graph: GraphDef.ID, container: Container) {
+        self.init(graph: graph,
+                  graphService: container.resolve()!)
+    }
+    
+    init(graph: GraphDef.ID, graphService: GraphService) {
         self.state = .init(graph: graph)
-        self.graphService = container.resolve()!
+        self.graphService = graphService
     }
     
     func trigger(_ action: NodeViewAction) async {
