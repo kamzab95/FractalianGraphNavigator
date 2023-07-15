@@ -42,31 +42,34 @@ struct NodeView: View {
     
     @ViewBuilder
     func contentView(nodeTree: NodeTree) -> some View {
-        VStack {
-            let node = nodeTree.node
-            Text("\(node.id)")
-                .frame(maxWidth: .infinity, minHeight: 30)
-                .background(Color.gray)
-                .cornerRadius(8)
-                .padding(8)
-            
-            if let dataDescription = node.dataDescription {
+        GeometryReader { geo in
+            VStack {
+                let node = nodeTree.node
+                Text("\(node.id)")
+                    .frame(maxWidth: .infinity, minHeight: 30)
+                    .background(Color.gray)
+                    .cornerRadius(8)
+                    .padding(8)
+                
+                if let dataDescription = node.dataDescription {
+                    ScrollView {
+                        Text(dataDescription)
+                            .multilineTextAlignment(.leading)
+                            .frame(maxWidth: .infinity)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 160)
+                }
+                
                 ScrollView {
-                    Text(dataDescription)
-                        .multilineTextAlignment(.leading)
-                        .frame(maxWidth: .infinity)
+                    NodesGridView(nodeTrees: nodeTree.children, columnWidth: geo.size.width) { nodeId in
+                        viewModel.trigger(.loadNode(nodeId))
+                    }
                 }
-                .frame(maxWidth: .infinity, maxHeight: 160)
+                .frame(minWidth: 50, minHeight: 50)
+                .background(Color.white)
             }
-            
-            ScrollView {
-                NodesGridView(nodeTrees: nodeTree.children) { nodeId in
-                    viewModel.trigger(.loadNode(nodeId))
-                }
-            }
-            .frame(minWidth: 50, minHeight: 50)
+            .padding(.top, 2)
         }
-        .padding(.top, 2)
     }
 }
 
