@@ -90,11 +90,11 @@ extension GraphNode {
     }
 }
 
-//struct NodeView_Previews: PreviewProvider {
-//    static var container = PreviewContainerFactory.build()
-//
-//    static var previews: some View {
-//        NodeView(container: container)
-//            .frame(minWidth: 300, minHeight: 500)
-//    }
-//}
+struct NodeView_Previews: PreviewProvider {
+    static var container = PreviewContainerFactory.build()
+
+    static var previews: some View {
+        NodeView(graph: "g1", container: container)
+            .frame(minWidth: 300, minHeight: 500)
+    }
+}

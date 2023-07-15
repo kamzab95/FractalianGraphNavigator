@@ -1,25 +1,23 @@
 //
-// AppDependencies.swift
+// PreviewContainerFactory.swift
 // FractalianGraphNavigator
 //
-// Created by Kamil Zaborowski on 12/07/2023
+// Created by Kamil Zaborowski on 15/07/2023
 // Copyright © 2023 Kamil Zaborowski. All rights reserved.
 //
 
 import Foundation
-import Swinject
 import GraphService
+import Swinject
 
-typealias Container = Swinject.Container
-
-class LiveContainerFactory {
+class PreviewContainerFactory {
     private init() { }
     
     static func build() -> Container {
         let container = Container()
         
         container.register(GraphService.self) { _ in
-            CoreDataGraphService(dataStore: CoreDataGraphDataStore())
+            FakeGraphService()
         }.inObjectScope(.container)
         
         container.register(GraphFilesProvider.self) { _ in

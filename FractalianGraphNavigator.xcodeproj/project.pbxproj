@@ -35,6 +35,8 @@
 		8ECB0B8A2A62CD6E0032BD95 /* GraphFilesProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B892A62CD6E0032BD95 /* GraphFilesProviderMock.swift */; };
 		8ECB0B8C2A62D4670032BD95 /* MainCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B8B2A62D4670032BD95 /* MainCoordinatorMock.swift */; };
 		8ECB0B8E2A62DE4A0032BD95 /* NodeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B8D2A62DE4A0032BD95 /* NodeViewModelTests.swift */; };
+		8ECB0B912A630A7B0032BD95 /* FakeGraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B902A630A7B0032BD95 /* FakeGraphService.swift */; };
+		8ECB0B962A630C700032BD95 /* PreviewContainerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B952A630C700032BD95 /* PreviewContainerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		8ECB0B892A62CD6E0032BD95 /* GraphFilesProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphFilesProviderMock.swift; sourceTree = "<group>"; };
 		8ECB0B8B2A62D4670032BD95 /* MainCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorMock.swift; sourceTree = "<group>"; };
 		8ECB0B8D2A62DE4A0032BD95 /* NodeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeViewModelTests.swift; sourceTree = "<group>"; };
+		8ECB0B902A630A7B0032BD95 /* FakeGraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGraphService.swift; sourceTree = "<group>"; };
+		8ECB0B952A630C700032BD95 /* PreviewContainerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainerFactory.swift; sourceTree = "<group>"; };
 		8ECBE9FE2A5863AF00771F19 /* FractalianGraphNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalianGraphNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECBEA0F2A5863B000771F19 /* FractalianGraphNavigatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalianGraphNavigatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,6 +212,8 @@
 		8EAEC65A2A5957F800501D38 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				8ECB0B942A630C630032BD95 /* App */,
+				8ECB0B8F2A630A6D0032BD95 /* Fakes */,
 				8EAEC65B2A5957F800501D38 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -228,6 +234,22 @@
 				8ECB0B852A628A7D0032BD95 /* GraphFilesProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		8ECB0B8F2A630A6D0032BD95 /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB0B902A630A7B0032BD95 /* FakeGraphService.swift */,
+			);
+			path = Fakes;
+			sourceTree = "<group>";
+		};
+		8ECB0B942A630C630032BD95 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB0B952A630C700032BD95 /* PreviewContainerFactory.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		8ECBE9F52A5863AF00771F19 = {
@@ -378,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E708F6E2A5E9CC800DF5572 /* AppDependencies.swift in Sources */,
+				8ECB0B912A630A7B0032BD95 /* FakeGraphService.swift in Sources */,
 				8EA595D12A5D3B9400828B80 /* NodeRectangleView.swift in Sources */,
 				8E6D89EB2A61A3260011AD2D /* MainCoordinatorView.swift in Sources */,
 				8ECB0B862A628A7D0032BD95 /* GraphFilesProvider.swift in Sources */,
@@ -387,6 +410,7 @@
 				8EA595BB2A59FD7700828B80 /* NodeView.swift in Sources */,
 				8E6D89ED2A61D74E0011AD2D /* MainCoordinatorViewModel.swift in Sources */,
 				8E6D89EF2A61D82F0011AD2D /* MainCoordinator.swift in Sources */,
+				8ECB0B962A630C700032BD95 /* PreviewContainerFactory.swift in Sources */,
 				8E6D89E82A6163DF0011AD2D /* SelectionView.swift in Sources */,
 				8E6D89F32A61E1720011AD2D /* NodeViewModel.swift in Sources */,
 			);
