@@ -23,6 +23,7 @@ public protocol GraphService {
 
 public typealias GraphEdge = GraphMLParser.GraphEdge
 public typealias GraphNode = GraphMLParser.GraphNode
+public typealias GenericElement = GraphMLParser.GenericElement
 
 public struct GraphDef: Identifiable {
     public var id: String

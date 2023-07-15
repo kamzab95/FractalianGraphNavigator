@@ -31,7 +31,7 @@ final class CoreDataGraphDataStoreTests: XCTestCase {
     }
     
     func testSaveAndRestoreNode() async throws {
-        let node = GraphNode(id: "n1", data: nil, ports: [])
+        let node = GraphNode(id: "n1", attributes: [:], elements: [])
         try sut.saveNode(node: node, graphId: defaultGraphId, batchSize: 0)
         
         let restored = try await sut.getNode(id: node.id, graphId: defaultGraphId)
@@ -40,7 +40,7 @@ final class CoreDataGraphDataStoreTests: XCTestCase {
     
     func testSaveAndRestoreNodes() async throws {
         for i in 0...5 {
-            let node = GraphNode(id: "n\(i)", data: nil, ports: [])
+            let node = GraphNode(id: "n\(i)", attributes: [:], elements: [])
             try sut.saveNode(node: node, graphId: defaultGraphId, batchSize: 0)
         }
         
@@ -52,9 +52,9 @@ final class CoreDataGraphDataStoreTests: XCTestCase {
     }
     
     func testGetEdgeBySource() async throws {
-        let node1 = GraphNode(id: "n1", data: nil, ports: [])
-        let node2 = GraphNode(id: "n2", data: nil, ports: [])
-        let node3 = GraphNode(id: "n3", data: nil, ports: [])
+        let node1 = GraphNode(id: "n1", attributes: [:], elements: [])
+        let node2 = GraphNode(id: "n2", attributes: [:], elements: [])
+        let node3 = GraphNode(id: "n3", attributes: [:], elements: [])
         
         let edge1 = GraphEdge(source: node1.id, target: node2.id)
         let edge2 = GraphEdge(source: node2.id, target: node3.id)
@@ -73,9 +73,9 @@ final class CoreDataGraphDataStoreTests: XCTestCase {
     }
     
     func testGetEdgeByTarget() async throws {
-        let node1 = GraphNode(id: "n1", data: nil, ports: [])
-        let node2 = GraphNode(id: "n2", data: nil, ports: [])
-        let node3 = GraphNode(id: "n3", data: nil, ports: [])
+        let node1 = GraphNode(id: "n1", attributes: [:], elements: [])
+        let node2 = GraphNode(id: "n2", attributes: [:], elements: [])
+        let node3 = GraphNode(id: "n3", attributes: [:], elements: [])
         
         let edge1 = GraphEdge(source: node1.id, target: node2.id)
         let edge2 = GraphEdge(source: node2.id, target: node3.id)

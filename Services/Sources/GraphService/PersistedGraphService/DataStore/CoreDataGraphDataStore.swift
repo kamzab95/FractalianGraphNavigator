@@ -15,22 +15,10 @@ public class CoreDataGraphDataStore: GraphDataStore {
     let backgroundContext: NSManagedObjectContext
     
     public convenience init(inMemory: Bool = false) {
+        CodableValueTransformer<[GenericElement]>.register(name: "GenericElementTransformer")
+        CodableValueTransformer<[String: String]>.register(name: "AttributesTransformer")
+        
         let container = NSPersistentContainer(name: "GraphModel", bundle: Bundle.module)
-        
-        let applicationSupportDirectory = try! FileManager.default.url(
-            for: .applicationSupportDirectory,
-            in: .userDomainMask,
-            appropriateFor: nil,
-            create: true
-        )
-
-        let storeURL = applicationSupportDirectory.appendingPathComponent("GraphModel2.sqlite")
-//        try! container.persistentStoreCoordinator.destroyPersistentStore(at: storeURL, type: .sqlite)
-        
-        print("StoreURL \(storeURL)")
-        
-        let description = NSPersistentStoreDescription(url: storeURL)
-        container.persistentStoreDescriptions = [description]
         
         if inMemory {
             let description = NSPersistentStoreDescription()
@@ -84,6 +72,8 @@ public class CoreDataGraphDataStore: GraphDataStore {
             let cdNode = CDNode(context: backgroundContext)
             cdNode.id = node.id
             cdNode.graph = graphId
+            cdNode.attributes = node.attributes
+            cdNode.elements = node.elements as NSObject
             
             try save(context: backgroundContext, batchSize: batchSize)
         }
@@ -222,7 +212,10 @@ extension CDGraph {
 
 extension CDNode {
     func asGraphNode() -> GraphNode {
-        GraphNode(id: id!, data: nil, ports: [])
+        let dAttributes = attributes ?? [:]
+        let dElements = elements as? [GenericElement] ?? []
+        
+        return GraphNode(id: id!, attributes: dAttributes, elements: dElements)
     }
 }
 

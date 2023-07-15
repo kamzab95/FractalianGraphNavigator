@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct GraphConfig {
+public struct GraphConfig: Codable {
     public var directed: Bool
     
     public init(directed: Bool) {
@@ -16,7 +16,7 @@ public struct GraphConfig {
     }
 }
 
-public struct GraphEdge {
+public struct GraphEdge: Codable {
     public var source: GraphNode.ID
     public var target: GraphNode.ID
     
@@ -26,15 +26,15 @@ public struct GraphEdge {
     }
 }
 
-public struct GraphNode: Identifiable {
+public struct GraphNode: Identifiable, Codable {
     public var id: String
-    public var data: Any?
-    public var ports: [String]
+    public var attributes: [String: String]
+    public var elements: [GenericElement]
     
-    public init(id: String, data: Any? = nil, ports: [String]) {
+    public init(id: String, attributes: [String: String], elements: [GenericElement]) {
         self.id = id
-        self.data = data
-        self.ports = ports
+        self.attributes = attributes
+        self.elements = elements
     }
 }
 
@@ -45,7 +45,7 @@ public protocol GraphMLParserDelegate: AnyObject {
     func graphMLParserDidCompleted()
 }
 
-public struct GenericElement {
+public struct GenericElement: Codable {
     public var name: String
     public var attributes: [String: String]
     public var text: String?
@@ -107,8 +107,8 @@ public class GraphMLParserImpl: NSObject, GraphParser, XMLParserDelegate {
         if element.name == "node" {
             let attributes = element.attributes
             let id = attributes["id"]!
-            let data = element.children
-            let node = GraphNode(id: id, data: data, ports: [])
+            let elements = element.children
+            let node = GraphNode(id: id, attributes: attributes, elements: elements)
             delegate?.graphMLParser(parsed: node)
         } else if element.name == "edge" {
             let attributes = element.attributes

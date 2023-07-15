@@ -50,11 +50,12 @@ struct NodeView: View {
                 .cornerRadius(8)
                 .padding(8)
             
-            VStack(alignment: .leading) {
-                Text("Data:")
+            ScrollView {
                 Text("\(node.dataDescription)")
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity)
             }
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: 160)
             
             ScrollView {
                 NodesGridView(nodeTrees: nodeTree.children) { nodeId in
@@ -69,10 +70,14 @@ struct NodeView: View {
 
 extension GraphNode {
     var dataDescription: String {
-        guard let data else {
-            return ""
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        do {
+            let encoded = try encoder.encode(elements)
+            return String(data: encoded, encoding: .utf8) ?? ""
+        } catch {
+            return "Failed to encode \(elements)"
         }
-        return "\(data)"
     }
 }
 

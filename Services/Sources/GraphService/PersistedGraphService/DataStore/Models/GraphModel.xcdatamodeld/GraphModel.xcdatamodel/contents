@@ -33,6 +33,8 @@
         </uniquenessConstraints>
     </entity>
     <entity name="CDNode" representedClassName="CDNode" syncable="YES" codeGenerationType="class">
+        <attribute name="attributes" optional="YES" attributeType="Transformable" valueTransformerName="AttributesTransformer" customClassName="[String: String]"/>
+        <attribute name="elements" optional="YES" attributeType="Transformable" valueTransformerName="GenericElementTransformer"/>
         <attribute name="graph" optional="YES" attributeType="String"/>
         <attribute name="id" attributeType="String"/>
         <fetchIndex name="byId">
