@@ -83,7 +83,7 @@ public class GraphMLParserImpl: NSObject, GraphParser, XMLParserDelegate {
     
     public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if elementName == "graph" {
-            let directed = attributeDict["edgedefault"] == "directed"
+            let directed = attributeDict["edgedefault"] != "undirected"
             let graph = GraphConfig(directed: directed)
             
             do {
