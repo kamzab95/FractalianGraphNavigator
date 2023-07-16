@@ -37,6 +37,8 @@
 		8ECB0B8E2A62DE4A0032BD95 /* NodeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B8D2A62DE4A0032BD95 /* NodeViewModelTests.swift */; };
 		8ECB0B912A630A7B0032BD95 /* FakeGraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B902A630A7B0032BD95 /* FakeGraphService.swift */; };
 		8ECB0B962A630C700032BD95 /* PreviewContainerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B952A630C700032BD95 /* PreviewContainerFactory.swift */; };
+		8ECB0B9A2A6405040032BD95 /* binary_graph.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB0B992A6405040032BD95 /* binary_graph.graphml */; };
+		8ECB0B9C2A6409890032BD95 /* fractal_graph.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB0B9B2A6409890032BD95 /* fractal_graph.graphml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		8ECB0B8D2A62DE4A0032BD95 /* NodeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeViewModelTests.swift; sourceTree = "<group>"; };
 		8ECB0B902A630A7B0032BD95 /* FakeGraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGraphService.swift; sourceTree = "<group>"; };
 		8ECB0B952A630C700032BD95 /* PreviewContainerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainerFactory.swift; sourceTree = "<group>"; };
+		8ECB0B992A6405040032BD95 /* binary_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = binary_graph.graphml; path = Scripts/binary_graph.graphml; sourceTree = SOURCE_ROOT; };
+		8ECB0B9B2A6409890032BD95 /* fractal_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = file; name = fractal_graph.graphml; path = Scripts/fractal_graph.graphml; sourceTree = SOURCE_ROOT; };
 		8ECBE9FE2A5863AF00771F19 /* FractalianGraphNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalianGraphNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECBEA0F2A5863B000771F19 /* FractalianGraphNavigatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalianGraphNavigatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +160,8 @@
 		8EA595B62A59FCFE00828B80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8ECB0B9B2A6409890032BD95 /* fractal_graph.graphml */,
+				8ECB0B992A6405040032BD95 /* binary_graph.graphml */,
 				8E8B8C9B2A6009730090D7C9 /* random_graph.graphml */,
 				8E708F7B2A5EB7AC00DF5572 /* broken_graph.graphml */,
 				8EA595D52A5D4C9E00828B80 /* hierarchical1.graphml */,
@@ -378,9 +384,11 @@
 				8EA595D42A5D4C3200828B80 /* circular1.graphml in Resources */,
 				8EAEC65F2A5957F800501D38 /* Preview Assets.xcassets in Resources */,
 				8EA595B82A59FD1E00828B80 /* organic2.graphml in Resources */,
+				8ECB0B9A2A6405040032BD95 /* binary_graph.graphml in Resources */,
 				8EAEC65E2A5957F800501D38 /* Assets.xcassets in Resources */,
 				8E708F7C2A5EB7AC00DF5572 /* broken_graph.graphml in Resources */,
 				8EA595D62A5D4C9E00828B80 /* hierarchical1.graphml in Resources */,
+				8ECB0B9C2A6409890032BD95 /* fractal_graph.graphml in Resources */,
 				8E8B8C9C2A6009730090D7C9 /* random_graph.graphml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
