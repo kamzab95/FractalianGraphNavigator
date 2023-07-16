@@ -20,9 +20,9 @@ final class GraphMLParserTests: XCTestCase {
         sut.delegate = mockGraphMLParserStorage
     }
     
-    func testParse() {
+    func testParse() throws {
         let url = Bundle.module.url(forResource: "organic2", withExtension: "graphml")!
-        sut.parse(url: url)
+        try sut.parse(url: url)
         
         XCTAssertEqual(mockGraphMLParserStorage.nodes.count, 123)
         XCTAssertEqual(mockGraphMLParserStorage.edges.count, 243)
