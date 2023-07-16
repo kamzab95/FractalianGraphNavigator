@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import GraphServiceMocks
 @testable import FractalianGraphNavigator
 
 final class SelectionViewModelTests: XCTestCase {

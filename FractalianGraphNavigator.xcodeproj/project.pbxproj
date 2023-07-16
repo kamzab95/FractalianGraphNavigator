@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E1E249D2A586E52001744F6 /* ModularModel in Frameworks */ = {isa = PBXBuildFile; productRef = 8E1E249C2A586E52001744F6 /* ModularModel */; };
+		8E5328772A64273900216D92 /* GraphServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5328762A64273900216D92 /* GraphServiceMock.swift */; };
 		8E6D89E82A6163DF0011AD2D /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D89E72A6163DF0011AD2D /* SelectionView.swift */; };
 		8E6D89EB2A61A3260011AD2D /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D89EA2A61A3260011AD2D /* MainCoordinatorView.swift */; };
 		8E6D89ED2A61D74E0011AD2D /* MainCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D89EC2A61D74E0011AD2D /* MainCoordinatorViewModel.swift */; };
@@ -31,7 +32,6 @@
 		8EAEC6602A5957F800501D38 /* AppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEC65C2A5957F800501D38 /* AppTemplateApp.swift */; };
 		8ECB0B802A6288350032BD95 /* SelectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B7F2A6288350032BD95 /* SelectionViewModelTests.swift */; };
 		8ECB0B862A628A7D0032BD95 /* GraphFilesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B852A628A7D0032BD95 /* GraphFilesProvider.swift */; };
-		8ECB0B882A62C3360032BD95 /* GraphServiceMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 8ECB0B872A62C3360032BD95 /* GraphServiceMocks */; };
 		8ECB0B8A2A62CD6E0032BD95 /* GraphFilesProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B892A62CD6E0032BD95 /* GraphFilesProviderMock.swift */; };
 		8ECB0B8C2A62D4670032BD95 /* MainCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B8B2A62D4670032BD95 /* MainCoordinatorMock.swift */; };
 		8ECB0B8E2A62DE4A0032BD95 /* NodeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB0B8D2A62DE4A0032BD95 /* NodeViewModelTests.swift */; };
@@ -52,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E5328762A64273900216D92 /* GraphServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphServiceMock.swift; sourceTree = "<group>"; };
 		8E6D89E72A6163DF0011AD2D /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		8E6D89EA2A61A3260011AD2D /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
 		8E6D89EC2A61D74E0011AD2D /* MainCoordinatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorViewModel.swift; sourceTree = "<group>"; };
@@ -79,7 +80,7 @@
 		8ECB0B902A630A7B0032BD95 /* FakeGraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGraphService.swift; sourceTree = "<group>"; };
 		8ECB0B952A630C700032BD95 /* PreviewContainerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainerFactory.swift; sourceTree = "<group>"; };
 		8ECB0B992A6405040032BD95 /* binary_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = binary_graph.graphml; path = Scripts/binary_graph.graphml; sourceTree = SOURCE_ROOT; };
-		8ECB0B9B2A6409890032BD95 /* fractal_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = file; name = fractal_graph.graphml; path = Scripts/fractal_graph.graphml; sourceTree = SOURCE_ROOT; };
+		8ECB0B9B2A6409890032BD95 /* fractal_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = fractal_graph.graphml; path = Scripts/fractal_graph.graphml; sourceTree = SOURCE_ROOT; };
 		8ECBE9FE2A5863AF00771F19 /* FractalianGraphNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalianGraphNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECBEA0F2A5863B000771F19 /* FractalianGraphNavigatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalianGraphNavigatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,7 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ECB0B882A62C3360032BD95 /* GraphServiceMocks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +230,7 @@
 			children = (
 				8ECB0B892A62CD6E0032BD95 /* GraphFilesProviderMock.swift */,
 				8ECB0B8B2A62D4670032BD95 /* MainCoordinatorMock.swift */,
+				8E5328762A64273900216D92 /* GraphServiceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -328,7 +329,6 @@
 			);
 			name = FractalianGraphNavigatorTests;
 			packageProductDependencies = (
-				8ECB0B872A62C3360032BD95 /* GraphServiceMocks */,
 			);
 			productName = AppTemplateTests;
 			productReference = 8ECBEA0F2A5863B000771F19 /* FractalianGraphNavigatorTests.xctest */;
@@ -429,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ECB0B8E2A62DE4A0032BD95 /* NodeViewModelTests.swift in Sources */,
+				8E5328772A64273900216D92 /* GraphServiceMock.swift in Sources */,
 				8ECB0B802A6288350032BD95 /* SelectionViewModelTests.swift in Sources */,
 				8ECB0B8A2A62CD6E0032BD95 /* GraphFilesProviderMock.swift in Sources */,
 				8ECB0B8C2A62D4670032BD95 /* MainCoordinatorMock.swift in Sources */,
@@ -743,10 +744,6 @@
 		8EA595BC2A59FDE300828B80 /* GraphMLParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = GraphMLParser;
-		};
-		8ECB0B872A62C3360032BD95 /* GraphServiceMocks */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = GraphServiceMocks;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

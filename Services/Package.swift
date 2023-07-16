@@ -9,10 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "GraphService",
-            targets: ["GraphService"]),
-        .library(
-            name: "GraphServiceMocks",
-            targets: ["GraphServiceMocks"]),
+            targets: ["GraphService"])
     ],
     dependencies: [
         .package(path: "GraphMLParser")
@@ -21,10 +18,6 @@ let package = Package(
         .target(
             name: "GraphService",
             dependencies: ["GraphMLParser"]),
-        .target(
-            name: "GraphServiceMocks",
-            dependencies: ["GraphService"],
-            path: "Mocks/GraphServiceMocks"),
         .testTarget(
             name: "GraphServiceTests",
             dependencies: ["GraphService"],
