@@ -55,18 +55,24 @@ class SelectionViewModel: ViewModel {
     }
     
     func trigger(_ action: SelectionViewAction) async {
-        switch action {
-        case .viewDidLoad:
-            loadAvailableFiles()
-            await loadExistingDatabases()
-        case .openDatabase(let databaseInfo):
-            mainCoordinator?.openNodeView(graphId: databaseInfo.id)
-        case .selectGraphFile(let name):
-            state.selectedGraphFile = name
-        case .processGraphFile:
-            await processGraphFile()
-        case .closeError:
-            state.errorMessage = nil
+        do {
+            switch action {
+            case .viewDidLoad:
+                loadAvailableFiles()
+                try await loadExistingDatabases()
+            case .openDatabase(let databaseInfo):
+                mainCoordinator?.openNodeView(graphId: databaseInfo.id)
+            case .selectGraphFile(let name):
+                state.selectedGraphFile = name
+            case .processGraphFile:
+                try await processGraphFile()
+            case .closeError:
+                state.errorMessage = nil
+                try await loadExistingDatabases()
+            }
+        } catch {
+            state.errorMessage = error.localizedDescription
+            state.processing = false
         }
     }
     
@@ -75,30 +81,22 @@ class SelectionViewModel: ViewModel {
         state.selectedGraphFile = state.graphFiles.first
     }
     
-    private func loadExistingDatabases() async {
-        do {
-            let graphs = try await graphService.getGraphs()
-            state.existingDatabases = graphs.map({
-                DatabaseInfo(id: $0.id)
-            })
-        } catch {
-            state.errorMessage = error.localizedDescription
-        }
+    private func loadExistingDatabases() async throws {
+        let graphs = try await graphService.getGraphs()
+        state.existingDatabases = graphs.map({
+            DatabaseInfo(id: $0.id)
+        })
     }
     
-    private func processGraphFile() async {
+    private func processGraphFile() async throws {
         guard let graphFile = state.selectedGraphFile else {
             return
         }
         state.processing = true
         
-        do {
-            try await graphService.loadGraph(url: graphFile.url, graphId: graphFile.name)
-        } catch {
-            state.errorMessage = error.localizedDescription
-        }
+        try await graphService.loadGraph(url: graphFile.url, graphId: graphFile.name)
 
         state.processing = false
-        await loadExistingDatabases()
+        try await loadExistingDatabases()
     }
 }

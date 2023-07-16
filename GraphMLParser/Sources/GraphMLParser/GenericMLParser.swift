@@ -39,9 +39,9 @@ public struct GraphNode: Identifiable, Codable {
 }
 
 public protocol GraphMLParserDelegate: AnyObject {
-    func graphMLParser(parsed graph: GraphConfig)
-    func graphMLParser(parsed node: GraphNode)
-    func graphMLParser(parsed edge: GraphEdge)
+    func graphMLParser(parsed graph: GraphConfig) throws
+    func graphMLParser(parsed node: GraphNode) throws
+    func graphMLParser(parsed edge: GraphEdge) throws
     func graphMLParserDidCompleted()
 }
 
@@ -54,22 +54,27 @@ public struct GenericElement: Codable {
 
 public protocol GraphParser {
     var delegate: GraphMLParserDelegate? { get set }
-    func parse(url: URL)
+    func parse(url: URL) throws
 }
  
 public class GraphMLParserImpl: NSObject, GraphParser, XMLParserDelegate {
     private var elementStack: [GenericElement] = []
     private var text: String = ""
     
+    private var saveError: Error?
+    
     public weak var delegate: GraphMLParserDelegate?
     
-    public func parse(url: URL) {
+    public func parse(url: URL) throws {
+        reset()
+        
         let parser = XMLParser(contentsOf: url)
         parser?.delegate = self
         parser?.parse()
         
-        elementStack = []
-        text = ""
+        if let saveError {
+            throw saveError
+        }
     }
     
     public func parserDidEndDocument(_ parser: XMLParser) {
@@ -80,7 +85,13 @@ public class GraphMLParserImpl: NSObject, GraphParser, XMLParserDelegate {
         if elementName == "graph" {
             let directed = attributeDict["edgedefault"] == "directed"
             let graph = GraphConfig(directed: directed)
-            delegate?.graphMLParser(parsed: graph)
+            
+            do {
+                try delegate?.graphMLParser(parsed: graph)
+            } catch {
+                saveError = error
+                parser.abortParsing()
+            }
 
             elementStack = []
             text = ""
@@ -109,7 +120,13 @@ public class GraphMLParserImpl: NSObject, GraphParser, XMLParserDelegate {
             let id = attributes["id"]!
             let elements = element.children
             let node = GraphNode(id: id, attributes: attributes, elements: elements)
-            delegate?.graphMLParser(parsed: node)
+            
+            do {
+                try delegate?.graphMLParser(parsed: node)
+            } catch {
+                saveError = error
+                parser.abortParsing()
+            }
         } else if element.name == "edge" {
             let attributes = element.attributes
             
@@ -117,12 +134,24 @@ public class GraphMLParserImpl: NSObject, GraphParser, XMLParserDelegate {
             let target = attributes["target"]!
             
             let edge = GraphEdge(source: source, target: target)
-            delegate?.graphMLParser(parsed: edge)
+            
+            do {
+                try delegate?.graphMLParser(parsed: edge)
+            } catch {
+                saveError = error
+                parser.abortParsing()
+            }
         } else if element.name == "graph" {
             // do nothing
         } else if elementStack.count > 0 {
             let lastIndex = elementStack.count - 1
             elementStack[lastIndex].children.append(element)
         }
+    }
+    
+    private func reset() {
+        elementStack = []
+        text = ""
+        saveError = nil
     }
 }

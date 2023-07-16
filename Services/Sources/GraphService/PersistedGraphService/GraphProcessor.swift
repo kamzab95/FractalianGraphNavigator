@@ -12,7 +12,6 @@ import GraphMLParser
 class GraphProcessor {
     
     private let dataStore: GraphDataStore
-    private var graphMLParser: GraphParser?
     
     private let graphId: String
     
@@ -22,24 +21,24 @@ class GraphProcessor {
     }
     
     public func loadGraph(url: URL) throws {
-        self.graphMLParser = GraphMLParserImpl()
-        self.graphMLParser?.delegate = self
-        self.graphMLParser?.parse(url: url)
+        let graphMLParser = GraphMLParserImpl()
+        graphMLParser.delegate = self
+        try graphMLParser.parse(url: url)
     }
 }
 
 extension GraphProcessor: GraphMLParserDelegate {
-    public func graphMLParser(parsed graphConfig: GraphConfig) {
+    public func graphMLParser(parsed graphConfig: GraphConfig) throws {
         let graph = GraphDef(id: graphId, directed: graphConfig.directed)
-        try? dataStore.saveGraph(graph: graph)
+        try dataStore.saveGraph(graph: graph)
     }
     
-    public func graphMLParser(parsed node: GraphNode) {
-        try? dataStore.saveNode(node: node, graphId: graphId, batchSize: 500)
+    public func graphMLParser(parsed node: GraphNode) throws {
+        try dataStore.saveNode(node: node, graphId: graphId, batchSize: 500)
     }
     
-    public func graphMLParser(parsed edge: GraphEdge) {
-        try? dataStore.saveEdge(edge: edge, graphId: graphId, batchSize: 500)
+    public func graphMLParser(parsed edge: GraphEdge) throws {
+        try dataStore.saveEdge(edge: edge, graphId: graphId, batchSize: 500)
     }
     
     public func graphMLParserDidCompleted() {

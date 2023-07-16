@@ -18,7 +18,7 @@
 		8E708F6E2A5E9CC800DF5572 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E708F6D2A5E9CC800DF5572 /* AppDependencies.swift */; };
 		8E708F772A5E9D9400DF5572 /* Resolver+resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E708F762A5E9D9400DF5572 /* Resolver+resolve.swift */; };
 		8E708F7A2A5E9E2500DF5572 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 8E708F792A5E9E2500DF5572 /* Swinject */; };
-		8E708F7C2A5EB7AC00DF5572 /* fractal_graph.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8E708F7B2A5EB7AC00DF5572 /* fractal_graph.graphml */; };
+		8E708F7C2A5EB7AC00DF5572 /* broken_graph.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8E708F7B2A5EB7AC00DF5572 /* broken_graph.graphml */; };
 		8E8B8C9C2A6009730090D7C9 /* random_graph.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8E8B8C9B2A6009730090D7C9 /* random_graph.graphml */; };
 		8EA595B82A59FD1E00828B80 /* organic2.graphml in Resources */ = {isa = PBXBuildFile; fileRef = 8EA595B72A59FD1E00828B80 /* organic2.graphml */; };
 		8EA595BB2A59FD7700828B80 /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA595BA2A59FD7700828B80 /* NodeView.swift */; };
@@ -58,7 +58,7 @@
 		8E6D89F22A61E1720011AD2D /* NodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeViewModel.swift; sourceTree = "<group>"; };
 		8E708F6D2A5E9CC800DF5572 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		8E708F762A5E9D9400DF5572 /* Resolver+resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+resolve.swift"; sourceTree = "<group>"; };
-		8E708F7B2A5EB7AC00DF5572 /* fractal_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = fractal_graph.graphml; path = Scripts/fractal_graph.graphml; sourceTree = SOURCE_ROOT; };
+		8E708F7B2A5EB7AC00DF5572 /* broken_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = broken_graph.graphml; path = Scripts/broken_graph.graphml; sourceTree = SOURCE_ROOT; };
 		8E8B8C9B2A6009730090D7C9 /* random_graph.graphml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = random_graph.graphml; path = Scripts/random_graph.graphml; sourceTree = SOURCE_ROOT; };
 		8EA595B72A59FD1E00828B80 /* organic2.graphml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = organic2.graphml; sourceTree = "<group>"; };
 		8EA595BA2A59FD7700828B80 /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				8E8B8C9B2A6009730090D7C9 /* random_graph.graphml */,
-				8E708F7B2A5EB7AC00DF5572 /* fractal_graph.graphml */,
+				8E708F7B2A5EB7AC00DF5572 /* broken_graph.graphml */,
 				8EA595D52A5D4C9E00828B80 /* hierarchical1.graphml */,
 				8EA595D32A5D4C3200828B80 /* circular1.graphml */,
 				8EA595B72A59FD1E00828B80 /* organic2.graphml */,
@@ -379,7 +379,7 @@
 				8EAEC65F2A5957F800501D38 /* Preview Assets.xcassets in Resources */,
 				8EA595B82A59FD1E00828B80 /* organic2.graphml in Resources */,
 				8EAEC65E2A5957F800501D38 /* Assets.xcassets in Resources */,
-				8E708F7C2A5EB7AC00DF5572 /* fractal_graph.graphml in Resources */,
+				8E708F7C2A5EB7AC00DF5572 /* broken_graph.graphml in Resources */,
 				8EA595D62A5D4C9E00828B80 /* hierarchical1.graphml in Resources */,
 				8E8B8C9C2A6009730090D7C9 /* random_graph.graphml in Resources */,
 			);

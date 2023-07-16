@@ -11,10 +11,12 @@ import CoreData
 import GraphMLParser
 
 public class CoreDataGraphDataStore: GraphDataStore {
-    let context: NSManagedObjectContext
-    let backgroundContext: NSManagedObjectContext
+    private let context: NSManagedObjectContext
+    private let backgroundContext: NSManagedObjectContext
     
-    public convenience init(inMemory: Bool = false) {
+    private var mergeError: Error?
+    
+    public convenience init(inMemory: Bool = false, conflictsPolicy: ConflictsPolicy = .throwError) {
         CodableValueTransformer<[GenericElement]>.register(name: "GenericElementTransformer")
         CodableValueTransformer<[String: String]>.register(name: "AttributesTransformer")
         
@@ -31,26 +33,27 @@ public class CoreDataGraphDataStore: GraphDataStore {
                 fatalError("Failed to initialize CoreData: \(error)")
             }
         }
-        self.init(context: container.viewContext)
+        self.init(context: container.viewContext, conflictsPolicy: conflictsPolicy)
     }
     
-    init(context: NSManagedObjectContext) {
+    init(context: NSManagedObjectContext, conflictsPolicy: ConflictsPolicy) {
         self.context = context
         context.undoManager = nil
-        context.mergePolicy = NSMergePolicy(merge: .overwriteMergePolicyType)
+        context.mergePolicy = NSMergePolicy(merge: conflictsPolicy.asMergePolicyType())
         
         backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         backgroundContext.parent = context
         backgroundContext.automaticallyMergesChangesFromParent = false
-        backgroundContext.mergePolicy = NSMergePolicy(merge: .overwriteMergePolicyType)
+        backgroundContext.mergePolicy = NSMergePolicy(merge: conflictsPolicy.asMergePolicyType())
 
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.NSManagedObjectContextDidSave, object: backgroundContext, queue: nil) { notification in
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.NSManagedObjectContextDidSave, object: backgroundContext, queue: nil) { [weak self] notification in
+            
             context.performAndWait {
                 context.mergeChanges(fromContextDidSave: notification)
                 do {
                     try context.save()
                 } catch {
-                    assertionFailure("Failed to merge context " + error.localizedDescription)
+                    self?.mergeError = error
                 }
                 context.reset()
             }
@@ -198,10 +201,36 @@ public class CoreDataGraphDataStore: GraphDataStore {
             return
         }
         
-        try context.save()
+        mergeError = nil
+        
+        do {
+            try context.save()
+        } catch {
+            mergeError = error
+        }
+        
         context.reset()
+        
+        if let error = mergeError {
+            throw error
+        }
     }
+}
 
+extension CoreDataGraphDataStore {
+    public enum ConflictsPolicy {
+        case overwrite
+        case throwError
+        
+        func asMergePolicyType() -> NSMergePolicyType {
+            switch self {
+            case .overwrite:
+                return .overwriteMergePolicyType
+            case .throwError:
+                return .errorMergePolicyType
+            }
+        }
+    }
 }
 
 extension CDGraph {
