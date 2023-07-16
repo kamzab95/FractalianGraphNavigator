@@ -15,23 +15,20 @@ struct NodesGridView: View {
     let openNode: (GraphNode.ID)->Void
     
     var body: some View {
-//        GeometryReader { geo in
-//            let cellWidth = geo.size.width / 3
-            let columnWidth = max(180, columnWidth)
-            let columns = [
-                GridItem(.adaptive(minimum: columnWidth * 0.67, maximum: columnWidth))
-            ]
-            LazyVGrid(columns: columns) {
-                ForEach(nodeTrees) { nodeTree in
-                    NodeRectangleView(nodeTree: nodeTree, columnWidth: columnWidth) { nodeId in
-                        openNode(nodeId)
-                    }
+        let columnWidth = max(180, columnWidth)
+        let columns = [
+            GridItem(.adaptive(minimum: columnWidth * 0.67, maximum: columnWidth))
+        ]
+        LazyVGrid(columns: columns) {
+            ForEach(nodeTrees) { nodeTree in
+                NodeRectangleView(nodeTree: nodeTree, columnWidth: columnWidth) { nodeId in
+                    openNode(nodeId)
                 }
             }
-            .frame(maxWidth: .infinity)
-            .padding(8)
-            .background(Color.white)
-//        }
+        }
+        .frame(maxWidth: .infinity)
+        .padding(8)
+        .background(Color.white)
     }
 }
 

@@ -23,6 +23,7 @@ struct NodeTree: Identifiable, Equatable {
 struct NodeViewState {
     let graph: GraphDef.ID
     var nodeTree: NodeTree?
+    var parentNodes: [GraphNode] = []
     var errorMessage: String?
 }
 
@@ -80,9 +81,30 @@ class NodeViewModel: ViewModel {
     }
     
     private func loadNode(_ nodeId: GraphNode.ID) async throws {
+        state.nodeTree = nil
+        
+        var state = self.state
+        
         let node = try await graphService.getNode(id: nodeId, graphId: graphId)
         let nodeTree = try await buildNodeTree(nodeId: nodeId)
+        let parentNodes = try await getParentNodes(nodeId: nodeId)
+        
         state.nodeTree = NodeTree(node: node, children: nodeTree)
+        state.parentNodes = parentNodes
+        
+        self.state = state
+    }
+    
+    private func getParentNodes(nodeId: GraphNode.ID) async throws -> [GraphNode] {
+        let edges = try await graphService.getEdges(target: nodeId, graphId: graphId)
+        
+        var nodes = [GraphNode]()
+        for edge in edges {
+            let node = try await graphService.getNode(id: edge.source, graphId: graphId)
+            nodes.append(node)
+        }
+        
+        return nodes
     }
     
     private func buildNodeTree(nodeId: GraphNode.ID, depth: Int = 0) async throws -> [NodeTree] {

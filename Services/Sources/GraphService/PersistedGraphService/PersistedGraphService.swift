@@ -48,7 +48,7 @@ public class CoreDataGraphService: GraphService {
     }
     
     public func getEdges(target: GraphNode.ID, graphId: GraphDef.ID) async throws -> [GraphEdge] {
-        try await dataStore.getEdges(source: target, graphId: graphId)
+        try await dataStore.getEdges(target: target, graphId: graphId)
     }
 }
 

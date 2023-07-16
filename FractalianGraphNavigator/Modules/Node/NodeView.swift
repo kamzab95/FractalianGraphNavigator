@@ -19,9 +19,9 @@ struct NodeView: View {
     
     var body: some View {
         VStack {
-            ZStack {
+            Group {
                 if let nodeTree = viewModel.nodeTree {
-                   contentView(nodeTree: nodeTree)
+                    contentView(nodeTree: nodeTree)
                 } else {
                     ZStack(alignment: .center) {
                         VStack(spacing: 8) {
@@ -57,9 +57,16 @@ struct NodeView: View {
                             .multilineTextAlignment(.leading)
                             .frame(maxWidth: .infinity)
                     }
+                    .background(Color.white)
+                    .cornerRadius(12)
+                    .shadow(radius: 4)
                     .frame(maxWidth: .infinity, maxHeight: 160)
+                    .padding(8)
                 }
                 
+                parentNodesView()
+                
+                Text("Child nodes")
                 ScrollView {
                     NodesGridView(nodeTrees: nodeTree.children, columnWidth: geo.size.width) { nodeId in
                         viewModel.trigger(.loadNode(nodeId))
@@ -69,6 +76,23 @@ struct NodeView: View {
                 .background(Color.white)
             }
             .padding(.top, 2)
+        }
+    }
+    
+    @ViewBuilder
+    func parentNodesView() -> some View {
+        VStack {
+            Text("Parent nodes")
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(viewModel.parentNodes) { node in
+                        Button(node.id) {
+                            viewModel.trigger(.loadNode(node.id))
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                }
+            }
         }
     }
 }
