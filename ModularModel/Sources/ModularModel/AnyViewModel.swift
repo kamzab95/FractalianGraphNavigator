@@ -16,16 +16,14 @@ public typealias AnyViewModelOf<VM: ViewModel> = AnyViewModel<VM.State, VM.Actio
 public final class AnyViewModel<State, Action>: ObservableObject {
 
     private let wrappedState: () -> State
-    private let wrappedTrigger: (Action) async -> Void
+    private let wrappedTrigger: (Action) -> Void
     
     public var state: State {
         wrappedState()
     }
 
     public func trigger(_ action: Action) {
-        Task { @MainActor in
-            await wrappedTrigger(action)
-        }
+        wrappedTrigger(action)
     }
     
     public subscript<Value>(dynamicMember keyPath: KeyPath<State, Value>) -> Value {
@@ -41,8 +39,10 @@ public final class AnyViewModel<State, Action>: ObservableObject {
         self.wrappedTrigger = viewModel.trigger
         
         viewModel.objectWillChange
-            .receive(on: RunLoop.main)
             .sink { [weak self] _ in
+                if !Thread.isMainThread {
+                    assertionFailure("objectWillChange was called from background thread. Add @MainActor to async function that updates state or use MainActor.run { }")
+                }
                 self?.objectWillChange.send()
             }.store(in: &cancelBag)
     }

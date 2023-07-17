@@ -10,12 +10,22 @@ import Foundation
 import SwiftUI
 import Combine
 
-public protocol ViewModel: ObservableObject, AnyObject {
+public protocol ViewModel: ObservableObject {
     associatedtype State
     associatedtype Action
 
     var state: State { get set }
+    
+    @MainActor
     func trigger(_ action: Action) async
+}
+
+public extension ViewModel {
+    func trigger(_ action: Action) {
+        Task {
+            await trigger(action)
+        }
+    }
 }
 
 public extension ViewModel where Action == Never {
@@ -37,4 +47,3 @@ public extension ViewModel {
         ObservedObject(wrappedValue: self.erase())
     }
 }
-

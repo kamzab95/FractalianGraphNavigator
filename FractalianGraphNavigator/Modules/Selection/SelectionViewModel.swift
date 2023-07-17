@@ -54,6 +54,7 @@ class SelectionViewModel: ViewModel {
         self.mainCoordinator = mainCoordinator
     }
     
+    @MainActor
     func trigger(_ action: SelectionViewAction) async {
         do {
             switch action {
@@ -81,6 +82,7 @@ class SelectionViewModel: ViewModel {
         state.selectedGraphFile = state.graphFiles.first
     }
     
+    @MainActor
     private func loadExistingDatabases() async throws {
         let graphs = try await graphService.getGraphs()
         state.existingDatabases = graphs.map({
@@ -88,6 +90,7 @@ class SelectionViewModel: ViewModel {
         })
     }
     
+    @MainActor
     private func processGraphFile() async throws {
         guard let graphFile = state.selectedGraphFile else {
             return

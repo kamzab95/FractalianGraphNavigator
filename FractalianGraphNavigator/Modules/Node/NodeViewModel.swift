@@ -58,6 +58,7 @@ class NodeViewModel: ViewModel {
         self.graphService = graphService
     }
     
+    @MainActor
     func trigger(_ action: NodeViewAction) async {
         do {
             switch action {
@@ -75,11 +76,13 @@ class NodeViewModel: ViewModel {
     
     // MARK: PRIVATE
     
+    @MainActor
     private func viewDidLoad() async throws {
         let topNode = try await graphService.getTopNode(graphId: graphId)
         try await loadNode(topNode.id)
     }
     
+    @MainActor
     private func loadNode(_ nodeId: GraphNode.ID) async throws {
         state.nodeTree = nil
         
@@ -95,6 +98,7 @@ class NodeViewModel: ViewModel {
         self.state = state
     }
     
+    @MainActor
     private func getParentNodes(nodeId: GraphNode.ID) async throws -> [GraphNode] {
         let edges = try await graphService.getEdges(target: nodeId, graphId: graphId)
         
@@ -107,6 +111,7 @@ class NodeViewModel: ViewModel {
         return nodes
     }
     
+    @MainActor
     private func buildNodeTree(nodeId: GraphNode.ID, depth: Int = 0) async throws -> [NodeTree] {
         guard depth < NodeViewModel.MAX_DEPTH else {
             return []
