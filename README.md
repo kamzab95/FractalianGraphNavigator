@@ -9,7 +9,7 @@ Thanks to proper indexing, reading the data is very fast - almost instant from t
 
 ## Run the project:
 
-Open `FractalianGraphNavigator/FractalianGraphNavigator.xcworkspace` in Xcode 14.2 or later.
+Open `FractalianGraphNavigator.xcworkspace` in Xcode 14.2 or later.
 
 
 ## Usage:
