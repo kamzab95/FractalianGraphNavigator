@@ -28,12 +28,6 @@ public extension ViewModel {
     }
 }
 
-public extension ViewModel where Action == Never {
-    func trigger(_ action: Never) async {
-        
-    }
-}
-
 public extension ViewModel {
     func erase() -> AnyViewModel<State, Action> {
         AnyViewModel(self)
