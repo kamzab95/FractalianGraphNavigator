@@ -54,6 +54,7 @@ struct NodeView: View {
                 if let dataDescription = node.dataDescription {
                     ScrollView {
                         Text(dataDescription)
+                            .foregroundColor(.black)
                             .multilineTextAlignment(.leading)
                             .frame(maxWidth: .infinity)
                     }
