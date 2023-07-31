@@ -11,7 +11,7 @@
       location = "group:ModularModel">
    </FileRef>
    <FileRef
-      location = "container:/Users/kamil/Projects/My/FractalianGraphNavigator/FractalianGraphNavigator.xcodeproj">
+      location = "container:FractalianGraphNavigator.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:FractalianGraphNavigatorTestPlan.xctestplan">
